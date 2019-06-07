@@ -1,0 +1,45 @@
+<h1>引入图片</h1>
+<img src="assets/Eat.png" alt="Eat" srcset="" />
+<img [src]="src" alt="" srcset="" />
+
+<hr />
+<h1>循环数据 显示 索引值</h1>
+<ul>
+  <li *ngFor="let item of arr; let i = index" [attr.data-index]="i">
+    {{ item }} --- {{ i }}
+  </li>
+</ul>
+
+<hr />
+<h1>*ngif 条件判断语句</h1>
+
+<ng-container *ngIf="flag; else elseTemplate">
+  <img src="assets/Eat.png" alt="" />
+</ng-container>
+<ng-template #elseTemplate>
+  <img src="assets/nsEat.png" alt="" />
+</ng-template>
+<button (click)="flag = !flag">切换</button>
+
+<hr>
+<h1>*ngswitch 条件判断语句</h1>
+<span [ngSwitch]="OrderStatus">
+  <p *ngSwitchCase="1">
+    已经支付
+  </p>
+  <p *ngSwitchCase="2">
+    支付并且收货
+  </p>
+  <p *ngSwitchCase="3">
+    已发货
+  </p>
+  <p *ngSwitchCase="4">
+    已收货
+  </p>
+  <p *ngSwitchCase="5">
+    无效
+  </p>
+  <p *ngSwitchDefault>
+    未购买
+  </p>
+</span>

@@ -1,0 +1,51 @@
+<h1>绑定数据</h1>
+{{ title }}
+{{ UserInfo.name }}
+<button (click)="changeTitle()">点击</button>
+
+<hr />
+<h1>绑定属性</h1>
+<div title="hello">
+  鼠标瞄上去看一下
+</div>
+<div [title]="title">张三</div>
+
+<hr />
+<h1>绑定html标签</h1>
+{{ content }}
+<span [innerHtml]="content" class="red"></span>
+
+<hr />
+<h1>模板里面做简单的运算</h1>
+1+2={{ 1 + 2 }}
+
+<hr />
+
+<h1>数据循环数组</h1>
+
+<ol>
+  <li *ngFor="let item of arr">
+    {{ item }}
+  </li>
+</ol>
+<ul>
+  <li *ngFor="let item of list; let i = index" [attr.data-index]="i">
+    {{ item }}
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let item of UserList; let i = index" [attr.data-index]="i">
+    {{ item.name }}---{{ item.age }}
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let item of Food; let i = index" [attr.data-index]="i">
+    <h2>菜名： {{ item.name }} 价格： {{ item.price }}</h2>
+    <p>配料：</p>
+    <p *ngFor="let item1 of item.detail; let i = index" [attr.data-index]="i">
+      {{ item1 }}
+    </p>
+  </li>
+</ul>
+<hr />
+<h1></h1>
