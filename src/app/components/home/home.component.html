@@ -21,7 +21,7 @@
 </ng-template>
 <button (click)="flag = !flag">切换</button>
 
-<hr>
+<hr />
 <h1>*ngswitch 条件判断语句</h1>
 <span [ngSwitch]="OrderStatus">
   <p *ngSwitchCase="1">
@@ -43,3 +43,10 @@
     未购买
   </p>
 </span>
+<hr />
+<h1>属性[ngclass] [ngstyle]</h1>
+
+<div class="red" [ngClass]="{'pink': color}">
+  演示ngclass
+</div>
+<button (click)="color = !color">切换颜色</button>
