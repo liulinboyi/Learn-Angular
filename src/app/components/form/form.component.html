@@ -20,6 +20,16 @@
           >女</label
         >
       </li>
+      <li>
+        城市：
+        <select name="city" id="" [(ngModel)]="city">
+          <option [value]="item" *ngFor="let item of cityList; let i = index">{{
+            item
+          }}</option>
+        </select>
+        {{ city }}
+        {{ cityList | json }}
+      </li>
     </ul>
     <button (click)="getsubmit()">获取表单内容</button>
     <br />

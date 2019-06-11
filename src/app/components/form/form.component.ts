@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 interface user {
   username: String;
-  sex: Number;
+  sex: String;
 }
 
 @Component({
@@ -13,13 +13,15 @@ interface user {
 export class FormComponent implements OnInit {
   public user: user = {
     username: "",
-    sex: 1
+    sex: "1"
   };
+  public cityList: Array<String> = ["北京", "上海", "深圳"];
+  public city: String = "北京";
   constructor() {}
 
   ngOnInit() {}
   getsubmit() {
     if (this.user.username === "") return;
-    console.log(this.user.username);
+    console.log(this.user);
   }
 }
