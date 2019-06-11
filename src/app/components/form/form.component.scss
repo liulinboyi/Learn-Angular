@@ -5,6 +5,12 @@ h2 {
 ul {
   li {
     list-style: none;
+
+    textarea {
+      position: absolute;
+      top: 1;
+      bottom: -109px;
+    }
   }
 }
 
@@ -30,6 +36,8 @@ ul {
         border: 1px solid rgb(68, 68, 68);
       }
     }
+
+    // &::nth-of-type(4) {}
   }
 
   button {
@@ -52,4 +60,17 @@ ul {
       box-shadow: 0px 0px 0px 0px #b1b1b1;
     }
   }
+}
+
+.hobby {
+  position: absolute;
+  bottom: -69px;
+  left: 0;
+  // display: none;
+  height: 40px;
+}
+
+.other {
+  position: absolute;
+  bottom: -142px;
 }

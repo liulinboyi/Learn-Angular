@@ -30,6 +30,31 @@
         {{ city }}
         {{ cityList | json }}
       </li>
+      <li>
+        爱好：
+        <span *ngFor="let item of Hobbby; let i = index">
+          <input
+            [name]="'check' + i"
+            type="checkbox"
+            [id]="'check' + i"
+            [(ngModel)]="item.checked"
+          />
+          <label [for]="'check' + i">{{ item.title }}</label>
+          &nbsp;&nbsp;
+        </span>
+        <br />
+        <div class="hobby">
+          {{ Hobbby | json }}
+        </div>
+      </li>
+      <li>
+        备注：
+        <textarea [(ngModel)]="Other" type="textarea" name="other"></textarea>
+        <br />
+        <div class="other">
+          {{ Other }}
+        </div>
+      </li>
     </ul>
     <button (click)="getsubmit()">获取表单内容</button>
     <br />
