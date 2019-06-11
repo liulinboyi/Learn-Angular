@@ -1,0 +1,14 @@
+<h2>人员登记系统</h2>
+
+<div class="people">
+  <!-- 双向数据绑定在 form 里面 需要 name属性 -->
+  <!-- []表示绑定属性 ()绑定事件 -->
+  <form action="" onsubmit="return false">
+    <ul>
+      <li>
+        姓名：<input type="text" [(ngModel)]="user.username" name="username" />
+      </li>
+    </ul>
+    <button (click)="getsubmit()">获取表单内容</button>
+  </form>
+</div>

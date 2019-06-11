@@ -46,7 +46,66 @@
 <hr />
 <h1>属性[ngclass] [ngstyle]</h1>
 
-<div class="red" [ngClass]="{'pink': color}">
+<div class="red" [ngClass]="{ pink: color }">
   演示ngclass
 </div>
 <button (click)="color = !color">切换颜色</button>
+
+<ul>
+  <li
+    *ngFor="let item of arr; let i = index"
+    [ngClass]="{ red: i === 0, pink: i === 1 }"
+  >
+    {{ item }} --- {{ i }}
+  </li>
+</ul>
+
+<p [ngStyle]="{ color: 'red' }">p标签</p>
+
+<p [ngStyle]="{ color: fcolor }">p标签</p>
+
+<hr />
+<h1>管道</h1>
+<h2>格式化时间</h2>
+格式化前
+{{today}}
+<br>
+格式化后
+{{ today | date: "yyyy-MM-dd HH:mm:ss" }}
+<br>
+格式化后
+{{ today | date: "yyyy-MM-dd" }}
+
+<hr />
+<h1>事件执行</h1>
+
+<button (click)="run()">执行事件</button>
+
+<button (click)="getdata()">执行方法获取数据</button>
+
+<button (click)="setdata()">设置方法获取数据</button>
+{{ title }}
+
+<hr />
+<h1>表单事件 事件对象</h1>
+
+<!-- <input type="text" (keydown)="keydown()"> -->
+<input
+  type="text"
+  name=""
+  id=""
+  (keyup)="keydown($event)"
+  placeholder="按下回车试试"
+/>
+<br />
+<button (click)="gerEvent($event)">获取event</button>
+
+<hr />
+<h1>双向数据绑定 mvvm 只是针对表单</h1>
+
+<input type="text" value="" [(ngModel)]="user" />
+{{ user }}
+<button (click)="user = '我是修改后的数据 视图应该改变了'">
+  改变数据 视图随之修改
+</button>
+

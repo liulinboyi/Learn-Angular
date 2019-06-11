@@ -21,6 +21,10 @@
   ><button (click)="headflag = !headflag">
     {{ headflag === true ? "隐藏" : "显示" }}
   </button>
+  <app-form [ngClass]="{ show: formflag, hide: !formflag }"></app-form
+    ><button (click)="formflag = !formflag">
+      {{ formflag === true ? "隐藏" : "显示" }}
+    </button>
 </div>
 
 <router-outlet></router-outlet>
