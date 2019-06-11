@@ -1,3 +1,4 @@
+![](https://i.loli.net/2019/06/11/5cff444332f5648225.png)
 # Angulardemo02
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.

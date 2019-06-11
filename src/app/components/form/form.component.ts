@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 interface user {
   username: String;
+  sex: Number;
 }
 
 @Component({
@@ -11,7 +12,8 @@ interface user {
 })
 export class FormComponent implements OnInit {
   public user: user = {
-    username: ""
+    username: "",
+    sex: 1
   };
   constructor() {}
 
